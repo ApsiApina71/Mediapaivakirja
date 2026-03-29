@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Hakutulokset</h2>
+
+<ul>
+{% for work in works %}
+    <li>
+        <a href="/work/{{ work.id }}">{{ work.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+<a href="/">Takaisin etusivulle</a>
+{% endblock %}
