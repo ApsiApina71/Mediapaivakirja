@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Oma profiili</h2>
+
+<p>Olet kirjoittanut yhteensä {{ review_count }} arvostelua.</p>
+
+<h3>Lisäämäsi teokset:</h3>
+<ul>
+{% for work in works %}
+    <li>
+        <a href="/work/{{ work.id }}">{{ work.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
