@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Teoksen tiedot</h2>
+
+<p>Arvosanojen keskiarvo: {{ stats.average_rating }}</p>
+<p>Arvostelujen määrä: {{ stats.review_count }}</p>
+
+<hr>
+<a href="/edit/{{ id }}">Muokkaa teosta</a>
+<br><br>
+<form action="/delete/{{ id }}" method="POST">
+    <button type="submit">Poista teos</button>
+</form>
+{% endblock %}
