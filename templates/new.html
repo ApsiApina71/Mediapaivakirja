@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Lisää uusi teos</h2>
+<form action="/new" method="POST">
+    Nimi: <input type="text" name="title" required><br>
+    Kuvaus: <textarea name="description"></textarea><br>
+    Kategoriat:<br>
+    {% for cat in categories %}
+        <input type="checkbox" name="categories" value="{{ cat.id }}"> {{ cat.name }}<br>
+    {% endfor %}
+    <br>
+    <button type="submit">Lisää teos</button>
+</form>
+{% endblock %}
