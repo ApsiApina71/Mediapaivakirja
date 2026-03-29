@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Kaikki teokset</h2>
+
+<form action="/search" method="GET">
+    <input type="text" name="query">
+    <button type="submit">Etsi</button>
+</form>
+
+<ul>
+{% for work in works %}
+    <li>
+        <a href="/work/{{ work.id }}">{{ work.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
